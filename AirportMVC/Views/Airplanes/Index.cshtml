@@ -1,0 +1,43 @@
+﻿@model IEnumerable<AirportMVC.Models.AirplaneViewModel>
+
+<style>
+    body {
+        background-color: #E1BBC9;
+    }
+</style>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Airplanes</h1>
+
+<div class="text-center jumbotron">
+    <h2>View All Airplanes</h2>
+    <a class="navbar-brand btn btn-dark" asp-area="" asp-controller="Airplanes" asp-action="Create">Add Plane</a>
+    <table class="table">
+        <thead>
+            <tr>
+                <td>@Html.DisplayNameFor(model => model.Model)</td>
+                <td>@Html.DisplayNameFor(model => model.FlightNumber)</td>
+                <td>@Html.DisplayNameFor(model => model.Destination)</td>
+                <td>@Html.DisplayNameFor(model => model.TimeDepart)</td>
+                <td>@Html.DisplayNameFor(model => model.Capacity)</td>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var plane in Model) {
+            <tr>
+                <td>@Html.DisplayFor(modelitem => plane.Model)</td>
+                <td>@Html.DisplayFor(modelitem => plane.FlightNumber)</td>
+                <td>@Html.DisplayFor(modelitem => plane.Destination)</td>
+                <td>@Html.DisplayFor(modelitem => plane.TimeDepart)</td>
+                <td>@Html.DisplayFor(modelitem => plane.Capacity)</td>
+                <td>@Html.ActionLink("Details", "Details", new { id = plane.Id }, new { @class = "btn btn-primary" })</td>
+                <td>@Html.ActionLink("Delete", "Delete", new { id = plane.Id }, new { @class="btn btn-danger"})</td>
+            </tr>
+            }
+        </tbody>
+    </table>
+</div>

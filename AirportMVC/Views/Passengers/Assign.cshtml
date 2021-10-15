@@ -1,0 +1,49 @@
+﻿@model AirportMVC.Models.PassengerViewModel
+
+    <style>
+        body {
+            background-color: #E1BBC9;
+        }
+    </style>
+
+
+@{
+    ViewData["Title"] = "Assign";
+}
+
+<h1>Assign Flight</h1>
+
+<div>
+    <hr />
+    <form asp-action="Assign">
+        <dl class="row jumbotron">
+            <dt>
+                <div class="form-group id">
+                    <label asp-for="Id" class="control-label"></label>
+                    <input asp-for="Id" class="form-control" readonly="@(true)" />
+                </div>
+            </dt>
+            <dt>
+                <div class="form-group">
+                    <label asp-for="FlightNumber" class="control-label"></label>
+                    <input asp-for="FlightNumber" class="form-control" />
+                    <span asp-validation-for="FlightNumber" class="text-danger"></span>
+                </div>
+            </dt>
+            <div class="form-group">
+                <label class="control-label"> Add Flight </label>
+                <input type="submit" value="Assign" class="btn btn-primary form-control" />
+            </div>
+        </dl>
+    </form>
+</div>
+
+
+<div>
+    <a asp-action="Index">Back</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+

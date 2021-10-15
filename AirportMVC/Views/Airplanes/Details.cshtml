@@ -1,0 +1,66 @@
+﻿@model Airport.Data.Airplane
+@{
+    ViewData["Title"] = "Details";
+}
+<style>
+    .form-group {
+        width: 7em;
+        margin: 1em;
+    }
+    .id {
+        width: 3em;
+    }
+    body {
+        background-color: #E1BBC9;
+    }
+</style>
+<h1>Plane</h1>
+<div>
+    <hr />
+    <form asp-action="Edit">
+        <dl class="row jumbotron">
+            <div class="form-group id">
+                <label asp-for="Id" class="control-label"></label>
+                <input asp-for="Id" class="form-control" readonly="@(true)"/>
+            </div>
+            <div class="form-group">
+                <label asp-for="Model" class="control-label"></label>
+                <input asp-for="Model" class="form-control" />
+                <span asp-validation-for="Model" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FlightNumber" class="control-label"></label>
+                <input asp-for="FlightNumber" class="form-control" />
+                <span asp-validation-for="FlightNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Destination" class="control-label"></label>
+                <input asp-for="Destination" class="form-control" />
+                <span asp-validation-for="Destination" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TimeDepart" class="control-label"></label>
+                <input asp-for="TimeDepart" class="form-control" />
+                <span asp-validation-for="TimeDepart" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Capacity" class="control-label"></label>
+                <input asp-for="Capacity" class="form-control" />
+                <span asp-validation-for="Capacity" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label"> Edit </label>
+                <input type="submit" value="Edit" class="btn btn-primary form-control" />
+            </div>
+        </dl>
+    </form>
+</div>
+
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
