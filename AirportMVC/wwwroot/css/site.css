@@ -69,3 +69,19 @@ body {
   white-space: nowrap;
   line-height: 60px; /* Vertically center the text there */
 }
+
+.navbar {
+    background-color: #F8FFE5;
+}
+li a{
+    opacity: 0.6;
+    transition: 0.3s;
+}
+li a:hover {
+    background-color: #FFFD82;
+    opacity: 1;
+}
+
+.jumbotron{
+    background-color:aliceblue;
+}
